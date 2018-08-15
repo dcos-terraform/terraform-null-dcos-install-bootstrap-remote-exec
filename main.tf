@@ -6,7 +6,7 @@
  * EXAMPLE
  * -------
  *
- *```hcl
+ * ```hcl
  * module "dcos-bootstrap-install" {
  *   source = "dcos-terraform/dcos-install-bootstrap-remote-exec/null"
  *
@@ -50,7 +50,7 @@
  *   master_ips                     = ["${module.dcos-infrastructure.masters.private_ips}"]
  *   dcos_num_masters               = "${length(module.dcos-infrastructure.masters.instances)}"
  * }
- *```
+ * ```
  */
 
 module "dcos-bootstrap" {
