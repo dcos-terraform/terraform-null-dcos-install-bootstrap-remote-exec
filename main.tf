@@ -161,7 +161,6 @@ module "dcos-bootstrap" {
 resource "null_resource" "bootstrap" {
   triggers = {
     dcos_version              = "${var.dcos_version}"
-    dcos_install_mode         = "${var.dcos_install_mode}"
     custom_dcos_download_path = "${var.custom_dcos_download_path}"
   }
 
