@@ -160,6 +160,7 @@ module "dcos-bootstrap" {
 
 resource "null_resource" "bootstrap" {
   triggers = {
+    trigger                                      = "${join(",", var.trigger)}"
     custom_dcos_download_path                    = "${var.custom_dcos_download_path}"
     dcos_adminrouter_tls_1_0_enabled             = "${var.dcos_adminrouter_tls_1_0_enabled}"
     dcos_adminrouter_tls_1_1_enabled             = "${var.dcos_adminrouter_tls_1_1_enabled}"
@@ -212,7 +213,6 @@ resource "null_resource" "bootstrap" {
     dcos_gpus_are_scarce                         = "${var.dcos_gpus_are_scarce}"
     dcos_http_proxy                              = "${var.dcos_http_proxy}"
     dcos_https_proxy                             = "${var.dcos_https_proxy}"
-    dcos_install_mode                            = "${var.dcos_install_mode}"
     dcos_ip_detect_public_filename               = "${var.dcos_ip_detect_public_filename}"
     dcos_l4lb_enable_ipv6                        = "${var.dcos_l4lb_enable_ipv6}"
     dcos_license_key_contents                    = "${var.dcos_license_key_contents}"
@@ -283,7 +283,7 @@ resource "null_resource" "bootstrap" {
 
   provisioner "remote-exec" {
     inline = [
-      "until sudo docker info; do echo 'waiting for docker...';sleep 10; done",
+      "# depends ${join(",",var.depends_on)}'",
       "chmod +x run.sh",
       "sudo bash -x ./run.sh",
     ]
