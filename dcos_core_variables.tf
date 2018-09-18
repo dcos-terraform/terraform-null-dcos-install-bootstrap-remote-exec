@@ -1,5 +1,5 @@
 # Main Variables
-variable "dcos_type" {
+variable "dcos_variant" {
   default = "open"
 }
 

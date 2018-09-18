@@ -43,7 +43,7 @@
  *
  * echo "{\"fault_domain\":{\"region\":{\"name\": $REGION},\"zone\":{\"name\": $ZONE}}}"
  * EOF
- *   dcos_type                      = "ee"
+ *   dcos_variant                      = "ee"
  *    dcos_license_key_contents      = ""
  *   dcos_master_discovery          = "static"
  *   dcos_exhibitor_storage_backend = "static"
@@ -151,7 +151,7 @@ module "dcos-bootstrap" {
   dcos_superuser_password_hash                 = "${var.dcos_superuser_password_hash}"
   dcos_superuser_username                      = "${var.dcos_superuser_username}"
   dcos_telemetry_enabled                       = "${var.dcos_telemetry_enabled}"
-  dcos_type                                    = "${var.dcos_type}"
+  dcos_variant                                 = "${var.dcos_variant}"
   dcos_ucr_default_bridge_subnet               = "${var.dcos_ucr_default_bridge_subnet}"
   dcos_use_proxy                               = "${var.dcos_use_proxy}"
   dcos_version                                 = "${var.dcos_version}"
@@ -247,7 +247,7 @@ resource "null_resource" "bootstrap" {
     dcos_superuser_password_hash                 = "${var.dcos_superuser_password_hash}"
     dcos_superuser_username                      = "${var.dcos_superuser_username}"
     dcos_telemetry_enabled                       = "${var.dcos_telemetry_enabled}"
-    dcos_type                                    = "${var.dcos_type}"
+    dcos_variant                                 = "${var.dcos_variant}"
     dcos_ucr_default_bridge_subnet               = "${var.dcos_ucr_default_bridge_subnet}"
     dcos_use_proxy                               = "${var.dcos_use_proxy}"
     dcos_version                                 = "${var.dcos_version}"

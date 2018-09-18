@@ -42,7 +42,7 @@ ZONE=$(echo $METADATA | grep -Po "\"availabilityZone\"\s+:\s+\"(.*?)\"" | cut -f
 
 echo "{\"fault_domain\":{\"region\":{\"name\": $REGION},\"zone\":{\"name\": $ZONE}}}"
 EOF
-  dcos_type                      = "ee"
+  dcos_variant                      = "ee"
    dcos_license_key_contents      = ""
   dcos_master_discovery          = "static"
   dcos_exhibitor_storage_backend = "static"
@@ -149,7 +149,7 @@ EOF
 | dcos_superuser_password_hash | [Enterprise DC/OS] set the superuser password hash (recommended) | string | `` | no |
 | dcos_superuser_username | [Enterprise DC/OS] set the superuser username (recommended) | string | `` | no |
 | dcos_telemetry_enabled | change the telemetry option (optional) | string | `` | no |
-| dcos_type | Main Variables | string | `open` | no |
+| dcos_variant | Main Variables | string | `open` | no |
 | dcos_ucr_default_bridge_subnet | IPv4 subnet allocated to the mesos-bridge CNI network for UCR bridge-mode networking. (optional) | string | `` | no |
 | dcos_use_proxy | to enable use of proxy for internal routing (optional) | string | `` | no |
 | dcos_version | specifies which dcos version instruction to use. Options: `1.9.0`, `1.8.8`, etc. _See [dcos_download_path](https://github.com/dcos/tf_dcos_core/blob/master/download-variables.tf) or [dcos_version](https://github.com/dcos/tf_dcos_core/tree/master/dcos-versions) tree for a full list._ | string | `1.9.0` | no |
