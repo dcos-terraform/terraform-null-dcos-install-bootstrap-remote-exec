@@ -1,23 +1,23 @@
 variable "master_ips" {
   type        = "list"
-  description = "list of master private ips"
+  description = "List of masterips to SSH to"
 }
 
 variable "bootstrap_ip" {
-  description = "the bootstrap ip to ssh to"
+  description = "The bootstrap IP to SSH to"
 }
 
 variable "os_user" {
   default     = "centos"
-  description = "The OS user to be used with ssh exec"
+  description = "The OS user to be used"
 }
 
 variable "trigger" {
   default     = []
-  description = "triggers for null resource"
+  description = "Triggers for null resource"
 }
 
 variable "depends_on" {
   default     = []
-  description = "modules are missing the depends_on feature. Faking this feature with input and output variables"
+  description = "Modules are missing the depends_on feature. Faking this feature with input and output variables"
 }
