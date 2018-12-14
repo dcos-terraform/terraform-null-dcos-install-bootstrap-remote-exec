@@ -9,7 +9,7 @@ EXAMPLE
 module "dcos-bootstrap-install" {
   source = "dcos-terraform/dcos-install-bootstrap-remote-exec/null"
 
-  # version = "~> 0.1"
+  # version = "~> 0.1.0"
 
   bootstrap_ip         = "${module.dcos-infrastructure.bootstrap.public_ip}"
   bootstrap_private_ip = "${module.dcos-infrastructure.bootstrap.private_ip}"

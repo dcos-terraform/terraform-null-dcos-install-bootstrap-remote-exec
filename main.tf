@@ -10,7 +10,7 @@
  * module "dcos-bootstrap-install" {
  *   source = "dcos-terraform/dcos-install-bootstrap-remote-exec/null"
  *
- *   # version = "~> 0.1"
+ *   # version = "~> 0.1.0"
  *
  *   bootstrap_ip         = "${module.dcos-infrastructure.bootstrap.public_ip}"
  *   bootstrap_private_ip = "${module.dcos-infrastructure.bootstrap.private_ip}"
@@ -55,7 +55,7 @@
 
 module "dcos-bootstrap" {
   source  = "dcos-terraform/dcos-core/template"
-  version = "~> 0.1"
+  version = "~> 0.1.0"
 
   # Only allow upgrade and install as installation mode
   dcos_install_mode = "${var.dcos_install_mode}"
