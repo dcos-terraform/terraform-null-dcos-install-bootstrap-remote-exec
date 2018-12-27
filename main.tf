@@ -254,6 +254,8 @@ resource "null_resource" "bootstrap" {
     dcos_zk_agent_credentials                    = "${var.dcos_zk_agent_credentials}"
   }
 
+  count = "${var.enable_bootstrap ? 1 : 0}"
+
   connection {
     host = "${var.bootstrap_ip}"
     user = "${var.os_user}"

@@ -157,6 +157,7 @@ EOF
 | dcos_zk_master_credentials | [Enterprise DC/OS] set the ZooKeeper master credentials (recommended) | string | `` | no |
 | dcos_zk_super_credentials | [Enterprise DC/OS] set the zk super credentials (recommended) | string | `` | no |
 | depends_on | Modules are missing the depends_on feature. Faking this feature with input and output variables | string | `<list>` | no |
+| enable_bootstrap | Sets whether to deploy bootstrap commands on provided ip address | string | `true` | no |
 | master_ips | List of masterips to SSH to | list | - | yes |
 | num_of_private_agents |  | string | `` | no |
 | num_of_public_agents |  | string | `` | no |

@@ -17,6 +17,11 @@ variable "trigger" {
   description = "Triggers for null resource"
 }
 
+variable "enable_bootstrap" {
+  description = "Sets whether to deploy bootstrap commands on provided ip address"
+  default     = "true"
+}
+
 variable "depends_on" {
   default     = []
   description = "Modules are missing the depends_on feature. Faking this feature with input and output variables"
