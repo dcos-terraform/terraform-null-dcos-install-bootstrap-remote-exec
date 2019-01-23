@@ -58,11 +58,9 @@ module "dcos-bootstrap" {
   version = "~> 0.1.0"
 
   # Only allow upgrade and install as installation mode
-  dcos_install_mode = "${var.dcos_install_mode}"
-  role              = "dcos-bootstrap"
-
-  dcos_master_list = "\n - ${join("\n - ", var.master_ips)}"
-
+  dcos_install_mode                            = "${var.dcos_install_mode}"
+  role                                         = "dcos-bootstrap"
+  dcos_master_list                             = "\n - ${join("\n - ", var.master_ips)}"
   bootstrap_private_ip                         = "${var.bootstrap_private_ip}"
   custom_dcos_download_path                    = "${var.custom_dcos_download_path}"
   dcos_adminrouter_tls_1_0_enabled             = "${var.dcos_adminrouter_tls_1_0_enabled}"
@@ -156,6 +154,7 @@ module "dcos-bootstrap" {
   dcos_use_proxy                               = "${var.dcos_use_proxy}"
   dcos_version                                 = "${var.dcos_version}"
   dcos_zk_agent_credentials                    = "${var.dcos_zk_agent_credentials}"
+  dcos_enable_mesos_input_plugin               = "${var.dcos_enable_mesos_input_plugin}"
 }
 
 resource "null_resource" "bootstrap" {
@@ -252,6 +251,7 @@ resource "null_resource" "bootstrap" {
     dcos_use_proxy                               = "${var.dcos_use_proxy}"
     dcos_version                                 = "${var.dcos_version}"
     dcos_zk_agent_credentials                    = "${var.dcos_zk_agent_credentials}"
+    dcos_enable_mesos_input_plugin               = "${var.dcos_enable_mesos_input_plugin}"
   }
 
   connection {
